@@ -116,6 +116,15 @@ func RunMigrations() {
 			}
 			return nil
 		},
+	}, {
+		// alter table
+		ID: "202307111200",
+		Migrate: func(db *gorm.DB) error {
+			if err := db.Exec("ALTER TABLE `users` ADD `new_wrong_field` varchar(255) NOT NULL").Error; err != nil {
+				return err
+			}
+			return nil
+		},
 	}})
 
 	if err = m.Migrate(); err != nil {
@@ -123,5 +132,4 @@ func RunMigrations() {
 		os.Exit(1)
 	}
 	log.Println("Migration did run successfully")
-
 }
