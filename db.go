@@ -116,7 +116,17 @@ func RunMigrations() {
 			}
 			return nil
 		},
-	}})
+	}, {
+		// alter name column as unique key
+		ID: "202307262210",
+		Migrate: func(db *gorm.DB) error {
+			if err := db.Exec("ALTER TABLE `users` ADD UNIQUE (name(32))").Error; err != nil {
+				return err
+			}
+			return nil
+		},
+	},
+	})
 
 	if err = m.Migrate(); err != nil {
 		log.Fatalf("Migration failed: %v", err)
