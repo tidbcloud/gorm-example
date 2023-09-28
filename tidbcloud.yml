@@ -1,0 +1,4 @@
+github:
+  branch:
+    allowList:
+      - "ci_example"
