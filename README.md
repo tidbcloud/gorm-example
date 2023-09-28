@@ -22,7 +22,7 @@ This repo is based on [gorm playground](https://github.com/go-gorm/playground), 
 1. clone the code
 
 ```
-git clone git@github.com:shiyuhang0/branching-gorm-example.git
+git clone git@github.com:tidbcloud/branching-gorm-example.git
 cd branching-gorm-example
 ```
 
@@ -46,9 +46,9 @@ This repo has been connected to a TiDB Serverless using the [Branching GitHub in
 
 **CI workflow**
 
-The repo has a [Test GitHub Action](./.github/workflows/tests.yml) to run the test on the created TiDB Serverless branch. This action uses the [wait-for-tidbcloud-branch](https://github.com/tidbcloud/wait-for-tidbcloud-branch) to get branch connection information and pass it by environment variables. We can do it because the repo accepts the `GORM_DSN` environment variable as connection information. See the [code](https://github.com/shiyuhang0/branching-gorm-example/blob/9639f553418456fd1ebb1d933923fba131c98b6b/db.go#L52) for more details.
+The repo has a [Test GitHub Action](./.github/workflows/tests.yml) to run the test on the created TiDB Serverless branch. This action uses the [wait-for-tidbcloud-branch](https://github.com/tidbcloud/wait-for-tidbcloud-branch) to get branch connection information and pass it by environment variables. We can do it because the repo accepts the `GORM_DSN` environment variable as connection information. See the [code](https://github.com/tidbcloud/branching-gorm-example/blob/9ca6e4037edd25abafc35e1a378fc29ad62b5f68/db.go#L49) for more details.
 
-Check the [pull request](https://github.com/shiyuhang0/branching-gorm-example/pulls) to see how we use the CI workflow!
+Check the [pull request](https://github.com/tidbcloud/branching-gorm-example/pulls) to see how we use the CI workflow!
 
 **CD workflow**
 
